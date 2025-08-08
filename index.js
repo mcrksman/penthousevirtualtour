@@ -74,7 +74,7 @@
 	if (lookat === 'current') {
 	viewParams = viewer.view().parameters();
 	} else {
-	viewParams = {pitch: 0, yaw: 0, fov: rad(10)};
+	viewParams = {pitch: 0, yaw: 0, fov: rad(90)};
 	}
 
 mSceneObj.view().setParameters(viewParams);
@@ -275,9 +275,7 @@ mSceneObj.switchTo();
 
     // Add click event handler.
     wrapper.addEventListener('click', function() {
-      var scene = findSceneById(hotspot.target);
-      scene.marzipanoObject.view().setParameters(hotspot.new_scene_view_params);
-      switchScene(scene);
+      switchScene(findSceneById(hotspot.target));
     });
 
     // Prevent touch and scroll events from reaching the parent element.
