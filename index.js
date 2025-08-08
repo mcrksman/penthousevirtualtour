@@ -74,7 +74,7 @@
 	if (lookat === 'current') {
 	viewParams = viewer.view().parameters();
 	} else {
-	viewParams = {pitch: 0, yaw: 0, fov: rad(90)};
+	viewParams = {pitch: 0, yaw: 0, fov: rad(10)};
 	}
 
 mSceneObj.view().setParameters(viewParams);
