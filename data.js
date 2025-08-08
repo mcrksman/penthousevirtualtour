@@ -36,7 +36,7 @@ var APP_DATA = {
           "target": "1-2",
           "initialViewParameters": {
             "yaw": 1.9941222889460999,
-            "pitch": 0.003932461480285809,
+            "pitch": 0.003932461480285809, eeee
             "fov": 1.3907957019440098
           }
         },
