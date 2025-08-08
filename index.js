@@ -69,6 +69,16 @@
 
   // Initialize viewer.
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts);
+  
+  let viewParams;
+	if (lookat === 'current') {
+	viewParams = viewer.view().parameters();
+	} else {
+	viewParams = {pitch: 0, yaw: 0, fov: rad(90)};
+	}
+
+mSceneObj.view().setParameters(viewParams);
+mSceneObj.switchTo();
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
@@ -265,7 +275,9 @@
 
     // Add click event handler.
     wrapper.addEventListener('click', function() {
-      switchScene(findSceneById(hotspot.target));
+      var scene = findSceneById(hotspot.target);
+      scene.marzipanoObject.view().setParameters(hotspot.new_scene_view_params);
+      switchScene(scene);
     });
 
     // Prevent touch and scroll events from reaching the parent element.
